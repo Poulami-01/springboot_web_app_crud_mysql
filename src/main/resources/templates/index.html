@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>List Students</title>
+</head>
+
+<body>
+    <p th:text="${message}"></p>
+    <br/>
+    <button type="button" onclick="location.href = '/index'">List</button>&nbsp;
+    <button type="button" onclick="location.href = '/insert'">Insert</button>
+    <div class="container">
+        <div th:if="${not#lists.isEmpty(students)}">
+            <h2>Student List</h2>
+            <table>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Action</th>
+                </tr>
+                <tr th:each="student : ${students}">
+                    <td th:text="${student.getId()}"></td>
+                    <td th:text="${student.getName()}"></td>
+                    <td th:text="${student.getAge()}">
+                    <td>
+                        <input type="button" th:attr="data-id=${student.getId()}" value="edit" onclick="editClicked(this)">&nbsp;
+                        <input type="button" th:attr="data-id=${student.getId()}" value="delete" onclick="deleteClicked(this)">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script src="js/index.js"></script>
+</body>
+</html>

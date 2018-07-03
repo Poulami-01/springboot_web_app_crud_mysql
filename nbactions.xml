@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>CUSTOM-Run The Spring Web App</actionName>
+            <displayName>Run The Spring Web App</displayName>
+            <goals>
+                <goal>spring-boot:run</goal>
+            </goals>
+        </action>
+        <action>
+            <actionName>CUSTOM-Mvn Install</actionName>
+            <displayName>Mvn Install</displayName>
+            <goals>
+                <goal>install:install</goal>
+            </goals>
+        </action>
+        <action>
+            <actionName>CUSTOM-Clean Install Force Update</actionName>
+            <displayName>Clean Install Force Update</displayName>
+            <goals>
+                <goal>clean</goal>
+                <goal>install</goal>
+                <goal>-U</goal>
+            </goals>
+        </action>
+    </actions>
